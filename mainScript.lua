@@ -18,21 +18,48 @@ local LOWthreatLevel = { --Mostly legit functions, rarely used in viruses
 	"virus",
 }
 local virusNames = { --Names of virus scripts
-	"IStÃ¯Â¿Â½rtHere","y7]pHfj5Ã¯Â¿Â½:?rÃ¯Â¿Â½BtaaV%/]t?&Ã¯Â¿Â½O",'dapperguestyo',"zidanedude1",
-	"4d being","loser","infected","rolf","wildfire","geometry","join teh moovement","guest talker","anti-lag","sosolid2k244","IAmHereToHeÃ¯Â¿Â½lYourPlace","ROBO22e","IRstoopidnolifenerdwhoinfectedU","rayan11968","gomr","nhoj01","Of Course You Have Anti Virus Thats Why me (Some 1 in fear) Made This",
-	"snap infection","numbrez","imahakwtfz","wtfzor","dÃ¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½ng.........you got owned...","vivrus","zomg saved",
-	"hello...i Ã¯Â¿Â½m your new lord lolz","worm","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer",
+	"IStï¿½rtHere","y7]pHfj5ï¿½:?rï¿½BtaaV%/]t?&ï¿½O",'dapperguestyo',"zidanedude1",
+	"4d being","loser","infected","rolf","wildfire","geometry","join teh moovement","guest talker","anti-lag","sosolid2k244","IAmHereToHeï¿½lYourPlace","ROBO22e","IRstoopidnolifenerdwhoinfectedU","rayan11968","gomr","nhoj01","Of Course You Have Anti Virus Thats Why me (Some 1 in fear) Made This",
+	"snap infection","numbrez","imahakwtfz","wtfzor","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vivrus","zomg saved",
+	"hello...i ï¿½m your new lord lolz","worm","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer",
 	"snap-reducer","script.....or..is.it","timer","datacontrollers","chaotic","teleportscript","spreadify",
 	"antivirussoftware","ropack injection","2_2_1_1_s_s_","safity lock","ropack","ropack backup","no availiblitly lock",
 	"protection","whfcjgysa","073dea7p","Infect","rofl","notorsoitis","numberitis","Virus","4dbeing","4d being","loser",
 	"infected","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer","snap-reducer",
 	"script.....or..is.it","Script......Or is it...","rolf","wildfire","geometry","join teh moovement","guest talker",
-	"anti-lag","snap infection","numbrez","imahakwtfz","wtfzor","dÃ¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½ng.........you got owned...","vivrus",
-	"zomg saved","hello...i Ã¯Â¿Â½m your new lord lolz","worm","datacontrollers","chaotic","spreadify",
+	"anti-lag","snap infection","numbrez","imahakwtfz","wtfzor","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vivrus",
+	"zomg saved","hello...i ï¿½m your new lord lolz","worm","datacontrollers","chaotic","spreadify",
 	"antivirussoftware","ropack injection","2_2_1_1_s_s_","safity lock","ropack","ropack backup","no availiblitly lock",
 	"protection","whfcjgysa","073dea7p","PWNZ0R3D","CompassEffect" , "Guest_Talking_Script" , "cubiclemon rulz",
-	"Motivation","motivation" , "Anti-Lag" , "troll" , "Troll" , "DÃ¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½NG YOU GOT OWNED AND PWNED" , "Vaccine","Yeller","ProperGrÃ¯Â¿Â½mmerNeeded","RobloxTeam","ProperGrÃ¯Â¿Â½mmerNeededInPhilosiphalLocations;insertNoobHere","RED ROBIN YUMMMMMMMM","4D Being","ROFL", "ViVrus", "H75", "OwO PILLA VIRUS OwOERoblocker","dÃÂ¥ÃÂ¥ÃÂ¥ÃÂ¥ÃÂ¥ÃÂ¥ÃÂ¥ÃÂ¥ng..............you got owned","Spread","VirusScript","Norton Vaccine","Anti-Lag","V-3(78% Done)","Virus...Virus...LEET VIRUS!!!","NORN VIRUS","UrAIdiotVirus (Click Arrow)","dÃ¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½", "Snap_Reducer","SnapReducer","Snap Remover Pro V.2","ParT(Snap reducer by name)","Black Lag","DoNotRemoveThisScriptOrElseYourBigFatMotherWillDieTonightOLOLOLOLOLOL","Infected","Infected Script","InfectedScript","ROBLOXImprotantScript","RSFfacility","virus script","Virus Script","anti Lag","anti lag","Anti lag","lag","Lag","dupe","Dupe","Malicious Objects Vaccine V1.5","Not a Virus","dÃ¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½Ã¯Â¿Â½ng.........you got owned...","vaccine","Vaccine", "Virus", "virus", "Dont worry im a friendly virus", "Dont worry im a friendly virus", "Don't worry im a friendly virus","don't worry im a friendly virus", "Super Anti Infection Vaccine", "Bad script Purger", "No Lag Script", "Scanner V1", "Spy bot and Lag remover", "Script......Or is it..."
+	"Motivation","motivation" , "Anti-Lag" , "troll" , "Troll" , "Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NG YOU GOT OWNED AND PWNED" , "Vaccine","Yeller","ProperGrï¿½mmerNeeded","RobloxTeam","ProperGrï¿½mmerNeededInPhilosiphalLocations;insertNoobHere","RED ROBIN YUMMMMMMMM","4D Being","ROFL", "ViVrus", "H75", "OwO PILLA VIRUS OwOERoblocker","dÃ¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥ng..............you got owned","Spread","VirusScript","Norton Vaccine","Anti-Lag","V-3(78% Done)","Virus...Virus...LEET VIRUS!!!","NORN VIRUS","UrAIdiotVirus (Click Arrow)","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Snap_Reducer","SnapReducer","Snap Remover Pro V.2","ParT(Snap reducer by name)","Black Lag","DoNotRemoveThisScriptOrElseYourBigFatMotherWillDieTonightOLOLOLOLOLOL","Infected","Infected Script","InfectedScript","ROBLOXImprotantScript","RSFfacility","virus script","Virus Script","anti Lag","anti lag","Anti lag","lag","Lag","dupe","Dupe","Malicious Objects Vaccine V1.5","Not a Virus","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vaccine","Vaccine", "Virus", "virus", "Dont worry im a friendly virus", "Dont worry im a friendly virus", "Don't worry im a friendly virus","don't worry im a friendly virus", "Super Anti Infection Vaccine", "Bad script Purger", "No Lag Script", "Scanner V1", "Spy bot and Lag remover", "Script......Or is it..."
 }
+--Creates backup tables so that we can easily reset main tables when restoring to default settings
+local backupHIGHthreatLevel = { --Threats that have nearly 0 legitimate use, and are mainly used in virus programs
+	"string.reverse", "getfenv", "rosync", "synapse", "isstudio"
+}
+local backupMEDthreatLevel = { --Threats that can have uses, but sometimes don't
+	"vaccine", "rotatep"
+}
+local backupLOWthreatLevel = { --Mostly legit functions, rarely used in viruses
+	"virus",
+}
+local backupVirusNames = { --Names of virus scripts
+	"IStï¿½rtHere","y7]pHfj5ï¿½:?rï¿½BtaaV%/]t?&ï¿½O",'dapperguestyo',"zidanedude1",
+	"4d being","loser","infected","rolf","wildfire","geometry","join teh moovement","guest talker","anti-lag","sosolid2k244","IAmHereToHeï¿½lYourPlace","ROBO22e","IRstoopidnolifenerdwhoinfectedU","rayan11968","gomr","nhoj01","Of Course You Have Anti Virus Thats Why me (Some 1 in fear) Made This",
+	"snap infection","numbrez","imahakwtfz","wtfzor","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vivrus","zomg saved",
+	"hello...i ï¿½m your new lord lolz","worm","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer",
+	"snap-reducer","script.....or..is.it","timer","datacontrollers","chaotic","teleportscript","spreadify",
+	"antivirussoftware","ropack injection","2_2_1_1_s_s_","safity lock","ropack","ropack backup","no availiblitly lock",
+	"protection","whfcjgysa","073dea7p","Infect","rofl","notorsoitis","numberitis","Virus","4dbeing","4d being","loser",
+	"infected","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer","snap-reducer",
+	"script.....or..is.it","Script......Or is it...","rolf","wildfire","geometry","join teh moovement","guest talker",
+	"anti-lag","snap infection","numbrez","imahakwtfz","wtfzor","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vivrus",
+	"zomg saved","hello...i ï¿½m your new lord lolz","worm","datacontrollers","chaotic","spreadify",
+	"antivirussoftware","ropack injection","2_2_1_1_s_s_","safity lock","ropack","ropack backup","no availiblitly lock",
+	"protection","whfcjgysa","073dea7p","PWNZ0R3D","CompassEffect" , "Guest_Talking_Script" , "cubiclemon rulz",
+	"Motivation","motivation" , "Anti-Lag" , "troll" , "Troll" , "Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NG YOU GOT OWNED AND PWNED" , "Vaccine","Yeller","ProperGrï¿½mmerNeeded","RobloxTeam","ProperGrï¿½mmerNeededInPhilosiphalLocations;insertNoobHere","RED ROBIN YUMMMMMMMM","4D Being","ROFL", "ViVrus", "H75", "OwO PILLA VIRUS OwOERoblocker","dÃ¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥ng..............you got owned","Spread","VirusScript","Norton Vaccine","Anti-Lag","V-3(78% Done)","Virus...Virus...LEET VIRUS!!!","NORN VIRUS","UrAIdiotVirus (Click Arrow)","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Snap_Reducer","SnapReducer","Snap Remover Pro V.2","ParT(Snap reducer by name)","Black Lag","DoNotRemoveThisScriptOrElseYourBigFatMotherWillDieTonightOLOLOLOLOLOL","Infected","Infected Script","InfectedScript","ROBLOXImprotantScript","RSFfacility","virus script","Virus Script","anti Lag","anti lag","Anti lag","lag","Lag","dupe","Dupe","Malicious Objects Vaccine V1.5","Not a Virus","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vaccine","Vaccine", "Virus", "virus", "Dont worry im a friendly virus", "Dont worry im a friendly virus", "Don't worry im a friendly virus","don't worry im a friendly virus", "Super Anti Infection Vaccine", "Bad script Purger", "No Lag Script", "Scanner V1", "Spy bot and Lag remover", "Script......Or is it..."
+}
+
 --Create the widget
 local widgetInfo = DockWidgetPluginGuiInfo.new(
 	Enum.InitialDockState.Float,
@@ -53,15 +80,29 @@ local settingsWidget = DockWidgetPluginGuiInfo.new(
 	1000,    
 	490   
 )
+
+local customWidget = DockWidgetPluginGuiInfo.new(
+	Enum.InitialDockState.Float,
+	false,   
+	false,  
+	1000,   
+	500,    
+	1000,    
+	490   
+)
 local testWidget = plugin:CreateDockWidgetPluginGui("Monke Defender", widgetInfo)
 testWidget.Title = "Monke Defender"
 local Widget = plugin:CreateDockWidgetPluginGui("Settings", settingsWidget)
 Widget.Title = "Settings"
+local CWidget = plugin:CreateDockWidgetPluginGui("Advanced Settings", customWidget)
+CWidget.Title = "Advanced Settings"
 --Parent UI to widget
 local UI = script.ScrollingFrame:Clone() 
 UI.Parent = testWidget
 local SetUI = script.Settings2:Clone() 
 SetUI.Parent = Widget
+local customUI = script.customThreatUI:Clone()
+customUI.Parent = CWidget
 --Runs when button is clicked
 newScriptButton.Click:Connect(function()
 	if testWidget.Enabled == false then 
@@ -86,6 +127,8 @@ local requireBtn = SetUI.Require.TextButton
 local httpBtn = SetUI.HTTPReq.TextButton
 local TeleportBtn = SetUI.TeleportService.TextButton
 local clearBtn = SetUI.ClearTable
+local cloneBtn = SetUI.OpenCustom
+local cloneBtn2 = SetUI.Clones.TextButton
 --Runs when any of the settings buttons are clicked
 clearBtn.MouseButton1Click:Connect(function()
 	table.clear(allowed)
@@ -99,6 +142,15 @@ requireBtn.MouseButton1Click:Connect(function()
 	else
 		requireBtn.BackgroundColor = BrickColor.new("Lime green")
 		script.Settings.FlagRequire.Value = true
+	end
+end)
+cloneBtn2.MouseButton1Click:Connect(function()
+	if script.Settings.DeleteClones.Value == true then
+		cloneBtn2.BackgroundColor = BrickColor.new("Really red")
+		script.Settings.DeleteClones.Value = false
+	else
+		cloneBtn2.BackgroundColor = BrickColor.new("Lime green")
+		script.Settings.DeleteClones.Value = true
 	end
 end)
 TeleportBtn.MouseButton1Click:Connect(function()
@@ -119,12 +171,67 @@ httpBtn.MouseButton1Click:Connect(function()
 		script.Settings.FlagHTTP.Value = true
 	end
 end)
+--Opens custom threat UI 
+SetUI.OpenCustom.MouseButton1Click:Connect(function()
+	Widget.Enabled = false
+	CWidget.Enabled = true
+end)
+--Buttons for the custom threat UI
+customUI.AddLow.MouseButton1Click:Connect(function()
+	table.insert(LOWthreatLevel, customUI.TextBox.Text)
+end)
+customUI.AddMed.MouseButton1Click:Connect(function()
+	table.insert(MEDthreatLevel, customUI.TextBox.Text)
+end)
+customUI.AddHigh.MouseButton1Click:Connect(function()
+	table.insert(HIGHthreatLevel, customUI.TextBox.Text)
+end)
+customUI.RemoveThreat.MouseButton1Click:Connect(function()
+	local threat = customUI.RemoveBox.Text
+	for i, v in pairs(LOWthreatLevel) do
+		if v == threat.lower(threat) then
+			table.remove(LOWthreatLevel, i)
+		end
+	end
+	for i, v in pairs(MEDthreatLevel) do
+		if v == threat.lower(threat) then
+			table.remove(MEDthreatLevel, i)
+		end
+	end
+	for i, v in pairs(HIGHthreatLevel) do
+		if v == threat.lower(threat) then
+			table.remove(HIGHthreatLevel, i)
+		end
+	end
+end)
+customUI.AddName.MouseButton1Click:Connect(function()
+	table.insert(virusNames, customUI.nameBox.Text)
+end)
+--Loops through our backup tables and resets the main tables
+customUI.ClearCustom.MouseButton1Click:Connect(function()
+	table.clear(virusNames)
+	table.clear(LOWthreatLevel)
+	table.clear(MEDthreatLevel)
+	table.clear(HIGHthreatLevel)
+	for _, name in pairs(backupVirusNames) do
+		table.insert(virusNames, name)
+	end
+	for _, threat in pairs(backupLOWthreatLevel) do
+		table.insert(LOWthreatLevel, threat)
+	end
+	for _, threat in pairs(backupMEDthreatLevel) do
+		table.insert(MEDthreatLevel, threat)
+	end
+	for _, threat in pairs(backupHIGHthreatLevel) do
+		table.insert(HIGHthreatLevel, threat)
+	end
+end)
 --Creates the actual button that the person can view :)
 function createTemplate(threatName, threatLevel, scriptName, script2, isModule, moduleParent)
 	for _, IHateRoblox --[[:P]] in pairs(scanBtn:GetChildren()) do
 		if IHateRoblox.Name ~= "UICorner" or "UIListLayout" or "Template" then
 			if IHateRoblox.Name == scriptName then
-				if IHateRoblox.ThreatName.Text == "Threat: "..threatName then
+				if IHateRoblox.ThreatName.Text == "Threat: "..threatName and script.Settings.DeleteClones.Value == true then
 					IHateRoblox:Destroy() --We have a clone, so destroy the clone
 					UI.labelclone.Visible = true --Alert the player of a clone
 				end
@@ -145,7 +252,7 @@ function createTemplate(threatName, threatLevel, scriptName, script2, isModule, 
 	end
 	local actionsBtn = clone:FindFirstChild("ActionsButton")
 	actionsBtn.MouseButton1Click:Connect(function()
-		for _, childrenInMyBasement --[[funni(don't tell the FBIð³)]] in pairs(actionsBtn:GetChildren()) do
+		for _, childrenInMyBasement --[[funni(don't tell the FBI😳)]] in pairs(actionsBtn:GetChildren()) do
 			if childrenInMyBasement.Name ~= "UICorner" then
 				childrenInMyBasement.Visible = true
 			end
