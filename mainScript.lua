@@ -9,7 +9,7 @@ local settingsButton = toolbar:CreateButton("Settings", "Opens settings UI.", "r
 local allowed = {"Won't actually clear any scripts with this name, simply instances the table."}
 --Creates the actual tables containing the dangerous viruses
 local HIGHthreatLevel = { --Threats that have nearly 0 legitimate use, and are mainly used in virus programs
-	"string.reverse", "getfenv", "rosync", "synapse", "isstudio"
+	"string.reverse", "getfenv", "rosync", "synapse", 
 }
 local MEDthreatLevel = { --Threats that can have uses, but sometimes don't
 	"vaccine", "rotatep"
@@ -35,7 +35,7 @@ local virusNames = { --Names of virus scripts
 }
 --Creates backup tables so that we can easily reset main tables when restoring to default settings
 local backupHIGHthreatLevel = { --Threats that have nearly 0 legitimate use, and are mainly used in virus programs
-	"string.reverse", "getfenv", "rosync", "synapse", "isstudio"
+	"string.reverse", "getfenv", "rosync", "synapse", 
 }
 local backupMEDthreatLevel = { --Threats that can have uses, but sometimes don't
 	"vaccine", "rotatep"
@@ -129,6 +129,8 @@ local TeleportBtn = SetUI.TeleportService.TextButton
 local clearBtn = SetUI.ClearTable
 local cloneBtn = SetUI.OpenCustom
 local cloneBtn2 = SetUI.Clones.TextButton
+local studioBtn = SetUI.IsStudio.TextButton
+local quarantineBtn = SetUI.autoQ.TextButton
 --Runs when any of the settings buttons are clicked
 clearBtn.MouseButton1Click:Connect(function()
 	table.clear(allowed)
@@ -169,6 +171,24 @@ httpBtn.MouseButton1Click:Connect(function()
 	else
 		httpBtn.BackgroundColor = BrickColor.new("Lime green")
 		script.Settings.FlagHTTP.Value = true
+	end
+end)
+studioBtn.MouseButton1Click:Connect(function()
+	if script.Settings.FlagStudio.Value == true then
+		studioBtn.BackgroundColor = BrickColor.new("Really red")
+		script.Settings.FlagStudio.Value = false
+	else
+		studioBtn.BackgroundColor = BrickColor.new("Lime green")
+		script.Settings.FlagStudio.Value = true
+	end
+end)
+quarantineBtn.MouseButton1Click:Connect(function()
+	if script.Settings.AutoQuarantine.Value == true then
+		quarantineBtn.BackgroundColor = BrickColor.new("Really red")
+		script.Settings.AutoQuarantine.Value = false
+	else
+		quarantineBtn.BackgroundColor = BrickColor.new("Lime green")
+		script.Settings.AutoQuarantine.Value = true
 	end
 end)
 --Opens custom threat UI 
@@ -245,6 +265,45 @@ function createTemplate(threatName, threatLevel, scriptName, script2, isModule, 
 	clone.ThreatLevel.Text = threatLevel
 	clone.ThreatName.Text = "Threat: "..threatName
 	clone.ScriptName.Text = "Script: "..scriptName
+	if script.Settings.AutoQuarantine.Value == true then
+		clone:Destroy()
+		if isModule == true then
+			if not game.ServerStorage:FindFirstChild("[MonkeDefender]Safe Zone") then
+				local folder = Instance.new("Folder")
+				folder.Name = "[MonkeDefender]Safe Zone"
+				folder.Parent = game:GetService("ServerStorage")
+				script2.Parent = folder
+				moduleParent.Parent = folder
+				if not script2:IsA("ModuleScript") then
+					script2.Disabled = true
+				end
+				clone:Destroy()
+			else
+				script2.Parent = game.ServerStorage:FindFirstChild("[MonkeDefender]Safe Zone")
+				moduleParent.Parent = game.ServerStorage:FindFirstChild("[MonkeDefender]Safe Zone")
+				if not script2:IsA("ModuleScript") then
+					script2.Disabled = true
+				end
+				clone:Destroy()
+			end
+		end
+		if not game.ServerStorage:FindFirstChild("[MonkeDefender]Safe Zone") then
+			local folder = Instance.new("Folder")
+			folder.Name = "[MonkeDefender]Safe Zone"
+			folder.Parent = game:GetService("ServerStorage")
+			script2.Parent = folder
+			if not script2:IsA("ModuleScript") then
+				script2.Disabled = true
+			end
+			clone:Destroy()
+		else
+			script2.Parent = game.ServerStorage:FindFirstChild("[MonkeDefender]Safe Zone")
+			if not script2:IsA("ModuleScript") then
+				script2.Disabled = true
+			end
+			clone:Destroy()
+		end
+	end
 	for _, item in pairs(allowed) do
 		if item == scriptName then
 			clone:Destroy()
@@ -305,6 +364,11 @@ function createTemplate(threatName, threatLevel, scriptName, script2, isModule, 
 end
 --Makes function for optional scans, simply for optimization
 function scan(obj, v)
+	for _, name in pairs(virusNames) do
+		if obj.Name.lower(obj.Name) == name then
+			createTemplate(name, "Threat Level: Medium", v.Name, v, false)
+		end
+	end
 	for _, a in pairs(HIGHthreatLevel) do
 		wait()
 		if obj.Source.lower(obj.Source):find(a) then
@@ -395,6 +459,16 @@ scanBtn.MouseButton1Click:Connect(function()
 					if v.Name ~= item then
 						if script.Settings.FlagTeleport.Value == true then
 							createTemplate("TeleportService", "Threat Level: Low", v.Name, v, false)
+						end
+					end	
+				end
+			end
+			if v.Source.lower(v.Source):find("isstudio") then
+				for _, item in pairs(allowed) do
+					wait()
+					if v.Name ~= item then
+						if script.Settings.FlagStudio.Value == true then
+							createTemplate("IsStudio", "Threat Level: High", v.Name, v, false)
 						end
 					end	
 				end
