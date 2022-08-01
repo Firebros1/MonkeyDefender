@@ -6,7 +6,7 @@ local toolbar = plugin:CreateToolbar("Monke Defender")
 local newScriptButton = toolbar:CreateButton("Toggle UI", "Toggles Main security UI.", "rbxassetid://10312624833")
 local settingsButton = toolbar:CreateButton("Settings", "Opens settings UI.", "rbxassetid://10319544511")
 --Creates allowed table, so that we don't keep flagging allowed scripts
-local allowed = {"Won't actually clear any scripts with this name, simply instances the table."}
+local allowed = {["Won't actually clear any scripts with this name, simply instances the table."] = true}
 --Creates the actual tables containing the dangerous viruses
 local HIGHthreatLevel = { --Threats that have nearly 0 legitimate use, and are mainly used in virus programs
 	"string.reverse", "getfenv", "rosync", "synapse", 
@@ -15,50 +15,28 @@ local MEDthreatLevel = { --Threats that can have uses, but sometimes don't
 	"vaccine", "rotatep"
 }
 local LOWthreatLevel = { --Mostly legit functions, rarely used in viruses
-	"virus",
+	"virus"
 }
 local virusNames = { --Names of virus scripts
-	"IStï¿½rtHere","y7]pHfj5ï¿½:?rï¿½BtaaV%/]t?&ï¿½O",'dapperguestyo',"zidanedude1",
-	"4d being","loser","infected","rolf","wildfire","geometry","join teh moovement","guest talker","anti-lag","sosolid2k244","IAmHereToHeï¿½lYourPlace","ROBO22e","IRstoopidnolifenerdwhoinfectedU","rayan11968","gomr","nhoj01","Of Course You Have Anti Virus Thats Why me (Some 1 in fear) Made This",
-	"snap infection","numbrez","imahakwtfz","wtfzor","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vivrus","zomg saved",
-	"hello...i ï¿½m your new lord lolz","worm","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer",
-	"snap-reducer","script.....or..is.it","timer","datacontrollers","chaotic","teleportscript","spreadify",
-	"antivirussoftware","ropack injection","2_2_1_1_s_s_","safity lock","ropack","ropack backup","no availiblitly lock",
-	"protection","whfcjgysa","073dea7p","Infect","rofl","notorsoitis","numberitis","Virus","4dbeing","4d being","loser",
-	"infected","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer","snap-reducer",
-	"script.....or..is.it","Script......Or is it...","rolf","wildfire","geometry","join teh moovement","guest talker",
-	"anti-lag","snap infection","numbrez","imahakwtfz","wtfzor","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vivrus",
-	"zomg saved","hello...i ï¿½m your new lord lolz","worm","datacontrollers","chaotic","spreadify",
-	"antivirussoftware","ropack injection","2_2_1_1_s_s_","safity lock","ropack","ropack backup","no availiblitly lock",
-	"protection","whfcjgysa","073dea7p","PWNZ0R3D","CompassEffect" , "Guest_Talking_Script" , "cubiclemon rulz",
-	"Motivation","motivation" , "Anti-Lag" , "troll" , "Troll" , "Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NG YOU GOT OWNED AND PWNED" , "Vaccine","Yeller","ProperGrï¿½mmerNeeded","RobloxTeam","ProperGrï¿½mmerNeededInPhilosiphalLocations;insertNoobHere","RED ROBIN YUMMMMMMMM","4D Being","ROFL", "ViVrus", "H75", "OwO PILLA VIRUS OwOERoblocker","dÃ¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥ng..............you got owned","Spread","VirusScript","Norton Vaccine","Anti-Lag","V-3(78% Done)","Virus...Virus...LEET VIRUS!!!","NORN VIRUS","UrAIdiotVirus (Click Arrow)","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Snap_Reducer","SnapReducer","Snap Remover Pro V.2","ParT(Snap reducer by name)","Black Lag","DoNotRemoveThisScriptOrElseYourBigFatMotherWillDieTonightOLOLOLOLOLOL","Infected","Infected Script","InfectedScript","ROBLOXImprotantScript","RSFfacility","virus script","Virus Script","anti Lag","anti lag","Anti lag","lag","Lag","dupe","Dupe","Malicious Objects Vaccine V1.5","Not a Virus","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vaccine","Vaccine", "Virus", "virus", "Dont worry im a friendly virus", "Dont worry im a friendly virus", "Don't worry im a friendly virus","don't worry im a friendly virus", "Super Anti Infection Vaccine", "Bad script Purger", "No Lag Script", "Scanner V1", "Spy bot and Lag remover", "Script......Or is it..."
+	["istï¿½rthere"] = true, ["y7]phfj5ï¿½:?rï¿½btaav%/]t?&ï¿½o"] = true, ["dapperguestyo"] = true, ["zidanedude1"] = true, ["4d being"] = true, ["loser"] = true, ["infected"] = true, ["rolf"] = true,
+	["wildfire"] = true, ["geometry"] = true, ["join teh moovement"] = true, ["guest talker"] = true, ["anti-lag"] = true, ["sosolid2k244"] = true, ["iamheretoheï¿½lyourplace"] = true, ["robo22e"] = true,
+	["irstoopidnolifenerdwhoinfectedu"] = true, ["rayan11968"] = true, ["gomr"] = true, ["nhoj01"] = true, ["of course you have anti virus thats why me (some 1 in fear) made this"] = true, ["snap infection"] = true, ["numbrez"] = true, ["imahakwtfz"] = true,
+	["wtfzor"] = true, ["dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned..."] = true, ["vivrus"] = true, ["zomg saved"] = true, ["hello...i ï¿½m your new lord lolz"] = true, ["worm"] = true, ["no samurai plzzz"] = true, ["ohai"] = true,
+	["virus"] = true, ["guest_talking_script"] = true, ["snapreducer"] = true, ["snap-reducer"] = true, ["script.....or..is.it"] = true, ["timer"] = true, ["datacontrollers"] = true, ["chaotic"] = true,
+	["teleportscript"] = true, ["spreadify"] = true, ["antivirussoftware"] = true, ["ropack injection"] = true, ["2_2_1_1_s_s_"] = true, ["safity lock"] = true, ["ropack"] = true, ["ropack backup"] = true,
+	["no availiblitly lock"] = true, ["protection"] = true, ["whfcjgysa"] = true, ["073dea7p"] = true, ["infect"] = true, ["rofl"] = true, ["notorsoitis"] = true, ["numberitis"] = true,
+	["4dbeing"] = true, ["script......or is it..."] = true, ["pwnz0r3d"] = true, ["compasseffect"] = true, ["cubiclemon rulz"] = true, ["motivation"] = true,	["troll"] = true, ["dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng you got owned and pwned"] = true, ["vaccine"] = true, ["yeller"] = true, ["propergrï¿½mmerneeded"] = true, ["robloxteam"] = true, ["propergrï¿½mmerneededinphilosiphallocations;insertnoobhere"] = true,
+	["red robin yummmmmmmm"] = true, ["h75"] = true, ["owo pilla virus owoeroblocker"] = true, ["dÃ¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥ng..............you got owned"] = true, ["spread"] = true,
+	["virusscript"] = true, ["norton vaccine"] = true, ["v-3(78% done)"] = true, ["virus...virus...leet virus!!!"] = true, ["norn virus"] = true, ["uraidiotvirus (click arrow)"] = true, ["dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"] = true,
+	["snap_reducer"] = true, ["snap remover pro v.2"] = true, ["part(snap reducer by name)"] = true, ["black lag"] = true, ["donotremovethisscriptorelseyourbigfatmotherwilldietonightolololololol"] = true, ["infected script"] = true,
+	["infectedscript"] = true, ["robloximprotantscript"] = true, ["rsffacility"] = true, ["virus script"] = true, ["anti lag"] = true,	["lag"] = true, ["dupe"] = true, ["malicious objects vaccine v1.5"] = true, ["not a virus"] = true, ["dont worry im a friendly virus"] = true, ["don't worry im a friendly virus"] = true, ["super anti infection vaccine"] = true,
 }
+
 --Creates backup tables so that we can easily reset main tables when restoring to default settings
-local backupHIGHthreatLevel = { --Threats that have nearly 0 legitimate use, and are mainly used in virus programs
-	"string.reverse", "getfenv", "rosync", "synapse", 
-}
-local backupMEDthreatLevel = { --Threats that can have uses, but sometimes don't
-	"vaccine", "rotatep"
-}
-local backupLOWthreatLevel = { --Mostly legit functions, rarely used in viruses
-	"virus",
-}
-local backupVirusNames = { --Names of virus scripts
-	"IStï¿½rtHere","y7]pHfj5ï¿½:?rï¿½BtaaV%/]t?&ï¿½O",'dapperguestyo',"zidanedude1",
-	"4d being","loser","infected","rolf","wildfire","geometry","join teh moovement","guest talker","anti-lag","sosolid2k244","IAmHereToHeï¿½lYourPlace","ROBO22e","IRstoopidnolifenerdwhoinfectedU","rayan11968","gomr","nhoj01","Of Course You Have Anti Virus Thats Why me (Some 1 in fear) Made This",
-	"snap infection","numbrez","imahakwtfz","wtfzor","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vivrus","zomg saved",
-	"hello...i ï¿½m your new lord lolz","worm","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer",
-	"snap-reducer","script.....or..is.it","timer","datacontrollers","chaotic","teleportscript","spreadify",
-	"antivirussoftware","ropack injection","2_2_1_1_s_s_","safity lock","ropack","ropack backup","no availiblitly lock",
-	"protection","whfcjgysa","073dea7p","Infect","rofl","notorsoitis","numberitis","Virus","4dbeing","4d being","loser",
-	"infected","no samurai plzzz","ohai","virus","guest_talking_script","snapreducer","snap-reducer",
-	"script.....or..is.it","Script......Or is it...","rolf","wildfire","geometry","join teh moovement","guest talker",
-	"anti-lag","snap infection","numbrez","imahakwtfz","wtfzor","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vivrus",
-	"zomg saved","hello...i ï¿½m your new lord lolz","worm","datacontrollers","chaotic","spreadify",
-	"antivirussoftware","ropack injection","2_2_1_1_s_s_","safity lock","ropack","ropack backup","no availiblitly lock",
-	"protection","whfcjgysa","073dea7p","PWNZ0R3D","CompassEffect" , "Guest_Talking_Script" , "cubiclemon rulz",
-	"Motivation","motivation" , "Anti-Lag" , "troll" , "Troll" , "Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NG YOU GOT OWNED AND PWNED" , "Vaccine","Yeller","ProperGrï¿½mmerNeeded","RobloxTeam","ProperGrï¿½mmerNeededInPhilosiphalLocations;insertNoobHere","RED ROBIN YUMMMMMMMM","4D Being","ROFL", "ViVrus", "H75", "OwO PILLA VIRUS OwOERoblocker","dÃ¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥Ã¥ng..............you got owned","Spread","VirusScript","Norton Vaccine","Anti-Lag","V-3(78% Done)","Virus...Virus...LEET VIRUS!!!","NORN VIRUS","UrAIdiotVirus (Click Arrow)","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Snap_Reducer","SnapReducer","Snap Remover Pro V.2","ParT(Snap reducer by name)","Black Lag","DoNotRemoveThisScriptOrElseYourBigFatMotherWillDieTonightOLOLOLOLOLOL","Infected","Infected Script","InfectedScript","ROBLOXImprotantScript","RSFfacility","virus script","Virus Script","anti Lag","anti lag","Anti lag","lag","Lag","dupe","Dupe","Malicious Objects Vaccine V1.5","Not a Virus","dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ng.........you got owned...","vaccine","Vaccine", "Virus", "virus", "Dont worry im a friendly virus", "Dont worry im a friendly virus", "Don't worry im a friendly virus","don't worry im a friendly virus", "Super Anti Infection Vaccine", "Bad script Purger", "No Lag Script", "Scanner V1", "Spy bot and Lag remover", "Script......Or is it..."
-}
+local backupHIGHthreatLevel = table.clone(HIGHthreatLevel)
+local backupMEDthreatLevel = table.clone(MEDthreatLevel)
+local backupLOWthreatLevel = table.clone(LOWthreatLevel)
+local backupVirusNames = table.clone(virusNames)
 
 --Create the widget
 local widgetInfo = DockWidgetPluginGuiInfo.new(
@@ -105,19 +83,11 @@ local customUI = script.customThreatUI:Clone()
 customUI.Parent = CWidget
 --Runs when button is clicked
 newScriptButton.Click:Connect(function()
-	if testWidget.Enabled == false then 
-		testWidget.Enabled = true
-	else
-		testWidget.Enabled = false
-	end
+	testWidget.Enabled = not testWidget.Enabled
 end)
 --Same as above, but for settingsUI instead
 settingsButton.Click:Connect(function()
-	if Widget.Enabled == false then 
-		Widget.Enabled = true
-	else
-		Widget.Enabled = false
-	end
+	Widget.Enabled = not Widget.Enabled
 end)
 --Creates Widget children
 local scanBtn = UI.ScanButton
@@ -135,7 +105,7 @@ local quarantineBtn = SetUI.autoQ.TextButton
 clearBtn.MouseButton1Click:Connect(function()
 	table.clear(allowed)
 	print("Cleared all allowed scripts!")
-	table.insert(allowed, "Won't actually clear any scripts with this name, simply instances the table.")
+	allowed["Won't actually clear any scripts with this name, simply instances the table."] = true
 end)
 requireBtn.MouseButton1Click:Connect(function()
 	if script.Settings.FlagRequire.Value == true then
@@ -225,31 +195,19 @@ customUI.RemoveThreat.MouseButton1Click:Connect(function()
 	end
 end)
 customUI.AddName.MouseButton1Click:Connect(function()
-	table.insert(virusNames, customUI.nameBox.Text)
+	virusNames[string.lower(customUI.nameBox.Text)] = true
 end)
 --Loops through our backup tables and resets the main tables
 customUI.ClearCustom.MouseButton1Click:Connect(function()
-	table.clear(virusNames)
-	table.clear(LOWthreatLevel)
-	table.clear(MEDthreatLevel)
-	table.clear(HIGHthreatLevel)
-	for _, name in pairs(backupVirusNames) do
-		table.insert(virusNames, name)
-	end
-	for _, threat in pairs(backupLOWthreatLevel) do
-		table.insert(LOWthreatLevel, threat)
-	end
-	for _, threat in pairs(backupMEDthreatLevel) do
-		table.insert(MEDthreatLevel, threat)
-	end
-	for _, threat in pairs(backupHIGHthreatLevel) do
-		table.insert(HIGHthreatLevel, threat)
-	end
+	virusNames = table.clone(backupVirusNames)
+	LOWthreatLevel = table.clone(backupLOWthreatLevel)
+	MEDthreatLevel = table.clone(backupMEDthreatLevel)
+	HIGHthreatLevel = table.clone(HIGHthreatLevel)
 end)
 --Creates the actual button that the person can view :)
 function createTemplate(threatName, threatLevel, scriptName, script2, isModule, moduleParent)
 	for _, IHateRoblox --[[:P]] in pairs(scanBtn:GetChildren()) do
-		if IHateRoblox.Name ~= "UICorner" or "UIListLayout" or "Template" then
+		if IHateRoblox.Name ~= "UICorner" or IHateRoblox.Name ~=  "UIListLayout" or IHateRoblox.Name ~= "Template" then
 			if IHateRoblox.Name == scriptName then
 				if IHateRoblox.ThreatName.Text == "Threat: "..threatName and script.Settings.DeleteClones.Value == true then
 					IHateRoblox:Destroy() --We have a clone, so destroy the clone
@@ -267,7 +225,7 @@ function createTemplate(threatName, threatLevel, scriptName, script2, isModule, 
 	clone.ScriptName.Text = "Script: "..scriptName
 	if script.Settings.AutoQuarantine.Value == true then
 		clone:Destroy()
-		if isModule == true then
+		if isModule then
 			if not game.ServerStorage:FindFirstChild("[MonkeDefender]Safe Zone") then
 				local folder = Instance.new("Folder")
 				folder.Name = "[MonkeDefender]Safe Zone"
@@ -304,10 +262,8 @@ function createTemplate(threatName, threatLevel, scriptName, script2, isModule, 
 			clone:Destroy()
 		end
 	end
-	for _, item in pairs(allowed) do
-		if item == scriptName then
-			clone:Destroy()
-		end
+	if allowed[scriptName] then
+		clone:Destroy()
 	end
 	local actionsBtn = clone:FindFirstChild("ActionsButton")
 	actionsBtn.MouseButton1Click:Connect(function()
@@ -319,7 +275,7 @@ function createTemplate(threatName, threatLevel, scriptName, script2, isModule, 
 		local allowBtn = actionsBtn.Allow
 		allowBtn.MouseButton1Click:Connect(function()
 			clone:Destroy()
-			table.insert(allowed, scriptName)
+			allowed[scriptName] = true
 		end)
 		local qBtn = actionsBtn.quaraButton
 		qBtn.MouseButton1Click:Connect(function()
@@ -364,28 +320,23 @@ function createTemplate(threatName, threatLevel, scriptName, script2, isModule, 
 end
 --Makes function for optional scans, simply for optimization
 function scan(obj, v)
-	for _, name in pairs(virusNames) do
-		if obj.Name.lower(obj.Name) == name then
-			createTemplate(name, "Threat Level: Medium", v.Name, v, false)
-		end
+	if virusNames[string.lower(obj.Name)] then
+		createTemplate(name, "Threat Level: Medium", v.Name, v, false)
 	end
 	for _, a in pairs(HIGHthreatLevel) do
-		wait()
-		if obj.Source.lower(obj.Source):find(a) then
+		if string.find(string.lower(obj.Source), a) then
 			print("High Threat virus found in script "..obj.Name..". Virus is "..a)
 			createTemplate(a, "Threat Level: High", v.Name, obj, true, v)
 		end
 	end
 	for _, a in pairs(MEDthreatLevel) do
-		wait()
-		if obj.Source.lower(obj.Source):find(a) then
+		if string.find(string.lower(obj.Source), a) then
 			print("High Threat virus found in script "..obj.Name..". Virus is "..a)
 			createTemplate(a, "Threat Level: Medium", v.Name, obj, true, v)
 		end
 	end
-	for _, a in pairs(LOWthreatLevel) do
-		wait()
-		if obj.Source.lower(obj.Source):find(a) then
+	for _, a in pairs(LOWtheatLevel) do
+		if string.find(string.lower(obj.Source), a) then
 			print("High Threat virus found in script "..obj.Name..". Virus is "..a)
 			createTemplate(a, "Threat Level: Low", v.Name, obj, true, v)
 		end
@@ -397,54 +348,49 @@ scanBtn.MouseButton1Click:Connect(function()
 	UI.novirus.Visible = false
 	for _, v in pairs(game:GetDescendants()) do
 		if v:IsA("Script") and v.Parent ~= "[MonkeDefender]Safe Zone" then
-			for _, item in pairs(allowed) do
-				if v.Name ~= item or v.Name == "Won't actually clear any scripts with this name, simply instances the table." then --this makes it so that viruses can't name themselves the one thing in allowed table and get away with it
-					for _, name in pairs(virusNames) do
-						if v.Name.lower(v.Name) == name then
-							createTemplate(name, "Threat Level: Medium", v.Name, v, false)
-						end
+			
+			if not allowed[v.Name] then
+				if virusNames[string.lower(v.Name)] then
+					createTemplate(name, "Threat Level: Medium", v.Name, v, false)
+				end
+				for _, a in pairs(HIGHthreatLevel) do
+					if v.Source.lower(v.Source):find(a) then
+						createTemplate(a, "Threat Level: High", v.Name, v, false)
+						print("High Threat virus found in script "..v.Name..". Virus is "..a)
 					end
-					for _, a in pairs(HIGHthreatLevel) do
-						if v.Source.lower(v.Source):find(a) then
-							createTemplate(a, "Threat Level: High", v.Name, v, false)
-							print("High Threat virus found in script "..v.Name..". Virus is "..a)
-						end
+				end
+				for _, b in pairs(MEDthreatLevel) do
+					if v.Source.lower(v.Source):find(b) then
+						print("Medium Threat virus found in script "..v.Name..". Virus is "..b)
+						createTemplate(b, "Threat Level: Medium", v.Name, v, false)
 					end
-					for _, b in pairs(MEDthreatLevel) do
-						if v.Source.lower(v.Source):find(b) then
-							print("Medium Threat virus found in script "..v.Name..". Virus is "..b)
-							createTemplate(b, "Threat Level: Medium", v.Name, v, false)
-						end
-					end
-					for _, c in pairs(LOWthreatLevel) do
+				end
+				for _, c in pairs(LOWthreatLevel) do
 						if v.Source.lower(v.Source):find(c) then
-							print("Low Threat virus found in script "..v.Name..". Virus is "..c)
-							createTemplate(c, "Threat Level: Low", v.Name, v, false)
-						end
+						print("Low Threat virus found in script "..v.Name..". Virus is "..c)
+						createTemplate(c, "Threat Level: Low", v.Name, v, false)
 					end
 				end
 			end
 			if v.Source.lower(v.Source):find("require") then
-				for _, item in pairs(allowed) do
-					if v.Name ~= item and v.Parent ~= "[MonkeDefender]Safe Zone"  then
-						if script.Settings.FlagRequire.Value == true then
-							if v.Source.lower(v.Source):match("%d+") then 
-								local Success = pcall(function()--Checks to make sure asset is valid, prevents code from erroring
-									game:GetService("MarketplaceService"):GetProductInfo(v.Source.lower(v.Source):match("%d+"))
-								end)
-								if (Success) then
-									for _, obj in ipairs(game:GetObjects("rbxassetid://"..v.Source.lower(v.Source):match("%d+"))) do
-										if obj:IsA("Script") or obj:IsA("ModuleScript") then
-											if not game.ServerStorage:FindFirstChild("[MonkeDefender]Safe Zone") then
-												local folder = Instance.new("Folder")
-												folder.Name = "[MonkeDefender]Safe Zone"
-												folder.Parent = game:GetService("ServerStorage")
-												obj.Parent = folder
-												scan(obj, v)
-											else
-												obj.Parent = game.ServerStorage:WaitForChild("[MonkeDefender]Safe Zone")
-												scan(obj, v)
-											end
+				if (not allowed[v.Name]) and v.Parent ~= "[MonkeDefender]Safe Zone"  then
+					if script.Settings.FlagRequire.Value == true then
+						if string.match(string.lower(v.Source), match("%d+")) then 
+							local Success = pcall(function()--Checks to make sure asset is valid, prevents code from erroring
+								game:GetService("MarketplaceService"):GetProductInfo(v.Source.lower(v.Source):match("%d+"))
+							end)
+							if Success then
+								for _, obj in ipairs(game:GetObjects("rbxassetid://"..v.Source.lower(v.Source):match("%d+"))) do
+									if obj:IsA("Script") or obj:IsA("ModuleScript") then
+										if not game.ServerStorage:FindFirstChild("[MonkeDefender]Safe Zone") then
+											local folder = Instance.new("Folder")
+											folder.Name = "[MonkeDefender]Safe Zone"
+											folder.Parent = game:GetService("ServerStorage")
+											obj.Parent = folder
+											scan(obj, v)
+										else
+											obj.Parent = game.ServerStorage:WaitForChild("[MonkeDefender]Safe Zone")
+											scan(obj, v)
 										end
 									end
 								end
@@ -453,35 +399,27 @@ scanBtn.MouseButton1Click:Connect(function()
 					end
 				end
 			end
-			if v.Source.lower(v.Source):find("teleportservice:teleport") then
-				for _, item in pairs(allowed) do
-					wait()
-					if v.Name ~= item then
-						if script.Settings.FlagTeleport.Value == true then
-							createTemplate("TeleportService", "Threat Level: Low", v.Name, v, false)
-						end
-					end	
+			if not allowed[v.Name] then
+				local low = v.Source.lower(v.Source)
+				
+				if low:find("teleportservice:teleport") then
+					if script.Settings.FlagTeleport.Value then
+						createTemplate("TeleportService", "Threat Level: Low", v.Name, v, false)
+					end
 				end
-			end
-			if v.Source.lower(v.Source):find("isstudio") then
-				for _, item in pairs(allowed) do
-					wait()
-					if v.Name ~= item then
-						if script.Settings.FlagStudio.Value == true then
-							createTemplate("IsStudio", "Threat Level: High", v.Name, v, false)
-						end
-					end	
+				
+				if low:find("isstudio") then
+					if script.Settings.FlagStudio.Value then
+						createTemplate("IsStudio", "Threat Level: High", v.Name, v, false)
+					end
 				end
-			end
-			if v.Source.lower(v.Source):find("httpservice") then
-				for _, item in pairs(allowed) do
-					wait()
-					if v.Name ~= item then
-						if script.Settings.FlagTeleport.Value == true then
-							createTemplate("HttpService", "Threat Level: Medium", v.Name, v, false)
-						end
-					end	
+				
+				if low:find("httpservice") then
+					if script.Settings.FlagTeleport.Value == true then
+						createTemplate("HttpService", "Threat Level: Medium", v.Name, v, false)
+					end
 				end
+				
 			end
 		end 
 	end
